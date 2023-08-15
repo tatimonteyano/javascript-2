@@ -37,8 +37,37 @@ if (confirm("Bienvenidos a la mejor plataforma de CDs de Argentina. ¿Desea cont
         }
     } else {
         alert(`No se encontraron CDs para el artista ${cdArtista}.`);
+    } 
+    
+    let cantidadProductos = parseInt(prompt("Ingrese la cantidad de productos que desea calcular:"));
+    let costoTotal = 0;
+    
+    for (let contador = 1; contador <= cantidadProductos; contador++) {
+        let producto = prompt(`Ingrese el nombre del Producto ${contador}:`);
+        let precioProducto = parseFloat(prompt(`Introduzca el precio del Producto ${producto}:`));
+    
+        if (isNaN(precioProducto)) {
+            alert("El precio ingresado no es válido. Inténtalo nuevamente.");
+        } else {
+            costoTotal += precioProducto;
+        }
     }
+    alert(`El costo total de tus productos es: ${costoTotal}`);
+    
+   if (confirm (" ¿Antes de irte, te gustaria agregar algun album a nuestra coleccion?")){
+     let NewArtista = prompt ("introduce el nombre del artista");
+     let NewAlbum = prompt ("introduce el nombre del album");
+     let NewPrecio = parseInt(prompt ("introduce el precio"));
+
+    let agregar =[NewArtista ,NewAlbum, NewPrecio]
+    function agregarProductoALaColeccion (producto) {
+        agregar.push(producto);
+        alert(`Producto "${producto}" agregado a la coleccion.`);
+  };
+  agregarProductoALaColeccion(agregar);
+    
 } else {
     alert("¡Te esperamos pronto!");
 }
-
+  console.log(Date());
+};
